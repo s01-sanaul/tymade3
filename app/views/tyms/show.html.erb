@@ -1,0 +1,53 @@
+<div class = "jumbotron" style = "background-color: #fffaf0; margin-top: 5%; opacity: 0.9"><center>
+  <h2 style = "color: #000080"><b>tym #<%= @tym.id %></b></h2><br>
+
+<div>
+  <strong>school ends</strong>:<br />
+  <p><%= @tym.end %></p>
+</div>
+<div>
+  <strong>amount of homework</strong>:<br />
+  <p><%= @tym.hw.split(":")[0] %> hours and <%= @tym.hw.split(":")[1] %> minutes</p>
+</div>
+<div>
+  <strong><i>free time</i></strong>:<br />
+  <p><%= @tym.sleep.split(":")[0].to_i - @tym.end.split(":")[0].to_i - @tym.hw.split(":")[0].to_i %> hours</p>
+</div>
+<div>
+  <strong><i>sleep time</i></strong>:<br />
+  <p><%= @tym.sleep %></p>
+</div>
+<div>
+  <strong>school starts</strong>:<br />
+  <p><%= @tym.start %></p>
+</div>
+
+  <% free = @tym.sleep.split(":")[0].to_i - @tym.end.split(":")[0].to_i - @tym.hw.split(":")[0].to_i %>
+  <% sleep = 24 - @tym.sleep.split(":")[0].to_i + @tym.start.split(":")[0].to_i %>
+  <% school = @tym.end.split(":")[0].to_i - @tym.start.split(":")[0].to_i %>
+  
+  
+<div class="progress">
+  <div class="progress-bar progress-bar-success" style="width: <%= school.to_f/24*100 %>%">
+    <span class="sr-only"></span>SCHOOL
+  </div>
+  <div class="progress-bar progress-bar-info" style="width: <%= @tym.hw.split(":")[0].to_f/24*100 %>%">
+    <span class="sr-only"></span>HOMEWORK
+  </div>
+  <div class="progress-bar progress-bar-warning" style="width: <%= free.to_f/24*100 %>%">
+    <span class="sr-only"></span>FREE TIME
+  </div>
+  <div class="progress-bar progress-bar-danger" style="width: <%= sleep.to_f/24*100 %>%">
+    <span class="sr-only"></span>SLEEP TIME
+  </div>
+</div>
+  
+  
+  
+<!-- <% if @tym.end.split(":")[0].to_i > 12 %>
+<p> <%= @tym.end.split(":")[0].to_i - 12 %> </p>
+<% end %> -->
+
+<a href="/tyms/<%= @tym.id %>/edit">edit</a> |
+<a href="/tyms/<%= @tym.id %>/destroy">destroy</a> |
+  <a href="/tyms">all</a>

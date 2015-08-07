@@ -1,0 +1,29 @@
+<div class = "jumbotron" style = "background-color: #fffaf0; margin-top: 5%; opacity: 0.9"><center>
+  <h2 style = "color: #000080"><b>Edit your Tym</b></h2><br>
+  
+  <form action="/tyms/<%= @tym.id %>/update">
+  
+  <div>
+    <label for = "end"><h3>Time school ends</h3></label><br>
+    <input type = "time" name = "end" id = "end">
+  </div><br>
+  
+  <div>
+    <label for="hw"><h3>Time for homework</h3></label><br />
+    <input type="number" name="hw_hr" min="0" max="23"> hours and 
+    <input type="number" name="hw_min" min="0" max="59"> minutes
+  </div><br>
+  
+  <div>
+    <label><h3>Time for sleep</h3></label><br />
+    <input type = "time" name = "sleep" id = "sleep">
+  </div><br>
+    
+  <div>
+    <label for="start"><h3>Time school starts</h3></label><br />
+    <input type = "time" name = "start" id = "start">
+  </div><br>
+ 
+  <div><br>
+    <a class = "btn btn-primary btn-lg"><input type = "submit" style = "background-color: Transparent; outline: none; border: none"></a>
+  </div>

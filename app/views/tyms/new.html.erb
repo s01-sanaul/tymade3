@@ -1,0 +1,52 @@
+<div class = "jumbotron" style = "background-color: #fffaf0; margin-top: 5%; opacity: 0.9"><center>
+  <h2 style = "color: #000080"><b>Make a new Tym</b></h2><br>
+  
+<form action="/create_tym">
+  
+  <div>
+    <label for = "end"><h3>Time school ends</h3></label><br>
+    <input type = "time" name = "end" id = "end">
+  </div><br>
+  
+  <div>
+    <label for="hw"><h3>Time for homework</h3></label><br />
+    <input type="number" name="hw_hr" min="0" max="23"> hours and 
+    <input type="number" name="hw_min" min="0" max="59"> minutes
+  </div><br>
+<!--   
+  <div>
+    <label for="free">Free time</label><br />
+    <input id="free" name="free" type="text" />
+  </div> -->
+  <div>
+    <label><h3>Time for sleep</h3></label><br />
+    <input type = "time" name = "sleep" id = "sleep">
+  </div><br>
+  
+  <div>
+    <label for="start"><h3>Time school starts</h3></label><br />
+    <input type = "time" name = "start" id = "start">
+  </div><br>
+ 
+  <div><br>
+    <a class = "btn btn-primary btn-lg"><input type = "submit" style = "background-color: Transparent; outline: none; border: none"></a>
+  </div>
+  
+<!--   
+  <select aria-label="hour" name="hour" id="hour" title="hour">
+    <option value="0" selected="1">Hour</option>
+    <% (1..12).each do |n| %>
+    <option value="<% n %>"><%= n %></option>
+      <% end %>
+    </select>
+    <b>:</b>
+    <select aria-label="min" name="min" id="min" title="min">
+    <option value="0" selected="1">Minute</option>
+    <% (0..59).each do |n| %>
+      <% if n >= 0 && n < 10 %>
+        <option value="<% n %>">0<%= n %></option>
+      <% else %>
+        <option value="<% n %>"><%= n %></option>
+      <% end %>
+      <% end %>
+    </select>  -->

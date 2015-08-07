@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <title>Tymade</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  
+  
+<!--    <h1 style = "font-family: 'Arial'; background-color: #000090;"><center><b><a style = "text-decoration: none; color: #76eec6" href = "/tymade/home">tymade</a></b></center></h1>
+   -->
+  
+  
+<body style = "background-color: #fffaf0; color: black"> <!-- BACKGROUND -->
+  <% if request.fullpath != "/tymade/home" %>
+<nav class="navbar navbar-default navbar-fixed-top" style = "background-color: #f08080; border-color: #f08080;">
+  <div class="container">
+    <b><a class="navbar-brand" style = "margin-left: -75px; color: #fffaf0; font-family: 'Arial'; font-size: 30px" href="/tyms">tymade</a></b>
+    <% if User.find_by_id(session["user_id"]) != nil %>
+    <p class="navbar-text" style = "color: white">Signed in as <%= User.find_by_id(session["user_id"]).username%> <a href = "/sessions/destroy">Sign out</a></p>
+    <h3 style = "margin-top: 13px"><b><a style = "text-decoration: none; color: white;" href = "/tyms"><%= User.find_by_id(session["user_id"]).username %>'s tyms</a></b></h3>
+    <% else %>
+    <p class = "navbar-text"><a href = "/sessions/new">Sign in</a></p>
+    <% end %>
+  </div>
+</nav>
+  <% end %>
+  
+  
+  
+  
+  
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<div class = "jumbotron" style = "background-color: #fffaf0; margin-top: 5%; opacity: 0.9"><center>
+  <h2 style = "color: #000080"><b><%= User.find_by_id(session["user_id"]).username%>'s tyms</b></h2><br>
+<table>
+  <tbody>
+          <% count = 1 %>
+
+  <% @tyms.each do |tym| %>
+   
+      <h4>tym #<%= count %></h4>
+     <a href="/tyms/<%= tym.id %>">show </a>|
+     <a href="/tyms/<%= tym.id %>/edit">edit </a>|
+     <a href="/tyms/<%= tym.id %>/destroy">destroy</a>
+      <% count += 1 %>
+    
+  <% end %>
+  </tbody>
+</table><br>
+<h4><a href="/new_tym">add a new tym</a></h4>
