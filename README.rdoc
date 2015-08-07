@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+enter different times in your schedule and view the distribution of your time throughout the day
 
-Things you may want to cover:
+user stories
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+student has lots of homework and wants to know how much sleep he/she will get
+student has lots of homework and wants to know if he/she can hang out with friends that day
+student wants to know how much time they spend at school compared to his/her other activities
